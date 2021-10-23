@@ -52,7 +52,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .bigPicture(eggImage)
         .bigLargeIcon(null)
 
-    // : Step 2.2 add snooze action for one minute 
+    // : Step 2.2 add snooze action for one minute
     val snoozeIntent = Intent(applicationContext, SnoozeReceiver::class.java)
     val snoozePendingIntent: PendingIntent = PendingIntent.getBroadcast(
         applicationContext,
@@ -87,7 +87,8 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
             applicationContext.getString(R.string.snooze),
             snoozePendingIntent)
 
-        // TODO: Step 2.5 set priority
+        // : Step 2.5 set priority
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     //   Step 1.4 call notify
     //THE NOTIFICATION_ID can be used for cancelling or updating the notification, however, in this app, we only have one notification.

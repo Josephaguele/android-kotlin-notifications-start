@@ -58,14 +58,14 @@ class EggTimerFragment : Fragment() {
     }
 
     private fun createChannel(channelId: String, channelName: String) {
-        // TODO: Step 1.6 START create a channel
+        // : Step 1.6 START create a channel
 // channels are available from API level 26 and above, this is why we need to make a version check
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
             val notificationChannel =
                 NotificationChannel (channelId,channelName,
                     // CHANGE Importance
-                    NotificationManager.IMPORTANCE_LOW)
+                    NotificationManager.IMPORTANCE_HIGH)
 
             notificationChannel.enableLights(true)
             notificationChannel.lightColor = Color.RED
@@ -75,7 +75,7 @@ class EggTimerFragment : Fragment() {
             val notificationManager = requireActivity().getSystemService(NotificationManager::class.java)
             notificationManager.createNotificationChannel(notificationChannel)
         }
-        // TODO: Step 1.6 END create a channel
+        // : Step 1.6 END create a channel
 
     }
 
