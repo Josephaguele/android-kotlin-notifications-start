@@ -50,7 +50,7 @@ class EggTimerFragment : Fragment() {
         binding.eggTimerViewModel = viewModel
         binding.lifecycleOwner = this.viewLifecycleOwner
 
-        // TODO: Step 1.7 call create channel
+        // : Step 1.7 call create channel
         createChannel(getString(R.string.egg_notification_channel_id),
        getString( R.string.egg_notification_channel_name))
 
@@ -66,6 +66,11 @@ class EggTimerFragment : Fragment() {
                 NotificationChannel (channelId,channelName,
                     // CHANGE Importance
                     NotificationManager.IMPORTANCE_HIGH)
+
+            //  :Step 2.6 disable badges for this channel since it is not really useful
+                    .apply {
+                        setShowBadge(false)
+                    }
 
             notificationChannel.enableLights(true)
             notificationChannel.lightColor = Color.RED
