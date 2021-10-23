@@ -140,6 +140,7 @@ class EggTimerViewModel(private val app: Application) : AndroidViewModel(app) {
         createTimer()
     }
 
+
     /**
      * Creates a new timer
      */
